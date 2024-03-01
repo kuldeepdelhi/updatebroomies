@@ -1,0 +1,144 @@
+/* styles.css */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Align items in the center */
+    padding: 0 20px;
+    
+    font-weight: bold; /* Bold font weight */
+}
+
+.contact-image {
+    width: 100%;
+   
+}
+
+.signin-btn {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signin-btn:hover {
+    background-color: #0056b3;
+}
+
+#contactForm {
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Updated styling for form */
+.form-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Space between input boxes */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    width: 70%; /* Set width of form group */
+}
+input#firstName {
+    width: 60%; /* Set width to 100% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 30%; /* Move the first name input box to the right */
+}
+
+input#lastName {
+    width: 60%; /* Set width to 100% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 8%;
+}
+label[for="firstName"]
+ {
+    margin-left: 30%; /* Adjust the left margin as needed */
+}
+label[for="lastName"] {
+    margin-left: 9%; /* Adjust the left margin as needed */
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adjust margin */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%; /* Set width to 100% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 50%; /* Make button full width */
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5%;
+}
+
+.right-aligned { 
+    text-align: right;
+    margin-right: 10px; 
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+h2 {
+    margin-bottom: 20px; /* Add margin below heading */
+    color: #007bff; /* Light blue color */
+    font-weight: bold;
+    font-size: 54px; /* Bold font weight */
+}
+
+p {
+    color: #007bff; /* Light blue color */
+    font-weight: bold;
+    font-size: 28px;
+    width: 65%; /* Bold font weight */
+}
