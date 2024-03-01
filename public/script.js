@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contactForm");
-    const errorMessage = document.getElementById("error-message");
+    const successMessage = document.getElementById("message");
   
     form.addEventListener("submit", function(event) {
       event.preventDefault();
@@ -11,45 +11,44 @@ document.addEventListener("DOMContentLoaded", function() {
       const password = document.getElementById("password").value;
       const confirmPassword = document.getElementById("confirmPassword").value;
   
-    
+      successMessage.textContent = "";
   
       if (firstName === "") {
-        errorMessage.textContent = "First name is required.";
+        successMessage.textContent = "First name is required.";
         return;
       }
   
       if (lastName === "") {
-        errorMessage.textContent = "Last name is required.";
+        successMessage.textContent = "Last name is required.";
         return;
       }
   
       if (email === "") {
-        errorMessage.textContent = "Email is required.";
+        successMessage.textContent = "Email is required.";
         return;
       } else if (!isValidEmail(email)) {
-        errorMessage.textContent = "Invalid email address.";
+        successMessage.textContent = "Invalid email address.";
         return;
       }
   
       if (username === "") {
-        errorMessage.textContent = "Username is required.";
+        successMessage.textContent = "Username is required.";
         return;
       }
   
       if (password === "") {
-        errorMessage.textContent = "Password is required.";
+        successMessage.textContent = "Password is required.";
         return;
       }
   
       if (confirmPassword === "") {
-        errorMessage.textContent = "Please confirm your password.";
+        successMessage.textContent = "Please confirm your password.";
         return;
       } else if (password !== confirmPassword) {
-        errorMessage.textContent = "Passwords do not match.";
+        successMessage.textContent = "Passwords do not match.";
         return;
       }
   
-      
       fetch('/submit-form', {
         method: 'POST',
         headers: {
@@ -72,11 +71,11 @@ document.addEventListener("DOMContentLoaded", function() {
       })
       .then(data => {
         console.log(data);
-        
+        successMessage.textContent = data.message;
       })
       .catch(error => {
         console.error('Error:', error);
-        
+        successMessage.textContent = "An error occurred while submitting the form.";
       });
     });
   
@@ -84,5 +83,4 @@ document.addEventListener("DOMContentLoaded", function() {
       const emailRegex = /\S+@\S+\.\S+/;
       return emailRegex.test(email);
     }
-  });
-  
+});
